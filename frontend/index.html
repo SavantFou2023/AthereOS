@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AetherOS Prototype</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-a"></div>
+    <div class="ambient ambient-b"></div>
+
+    <header class="topbar glass">
+      <button id="launcherToggle" class="launcher-button">Apps ▾</button>
+      <div class="status-pill" id="statusPill">
+        <span class="dot idle"></span>
+        <span id="statusLabel">Idle</span>
+      </div>
+    </header>
+
+    <aside id="launcher" class="launcher-panel glass hidden">
+      <input id="appSearch" type="text" placeholder="Search apps..." autocomplete="off" />
+      <ul id="appList"></ul>
+    </aside>
+
+    <main class="desktop-grid">
+      <section class="hub-shell glass">
+        <div class="hub-core">
+          <h1>AetherOS</h1>
+          <p>Visible AI system orchestration.</p>
+        </div>
+      </section>
+
+      <aside class="assistant-panel glass">
+        <div class="assistant-header">
+          <h2>Assistant</h2>
+          <div id="assistantMode" class="assistant-mode idle">idle</div>
+        </div>
+
+        <div id="chatLog" class="chat-log"></div>
+
+        <div class="composer">
+          <input
+            id="commandInput"
+            type="text"
+            placeholder='Try: "Search Google for futuristic OS design ideas"'
+          />
+          <button id="sendCommand">Run</button>
+        </div>
+
+        <div class="timeline-wrap">
+          <h3>Execution Timeline</h3>
+          <div id="timeline" class="timeline"></div>
+        </div>
+
+        <div class="activity-wrap">
+          <h3>Activity Log</h3>
+          <ul id="activityLog" class="activity-log"></ul>
+        </div>
+      </aside>
+    </main>
+
+    <nav class="dock-quarter glass" id="dock"></nav>
+
+    <section class="bottom-sheet glass" id="bottomSheet">
+      <button id="sheetHandle" class="sheet-handle" aria-label="Toggle details"></button>
+      <div class="sheet-content">
+        <h3>System Surface</h3>
+        <p>
+          Every assistant action is rendered visibly with state updates, timeline cards, and activity traces.
+        </p>
+      </div>
+    </section>
+
+    <div id="assistantCursor" class="assistant-cursor"></div>
+
+    <script src="/assets/app.js"></script>
+  </body>
+</html>
